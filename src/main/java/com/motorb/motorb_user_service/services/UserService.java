@@ -20,10 +20,9 @@ public class UserService {
 
         List<UserEntity> users = new ArrayList<>();
 
-        UserEntity _user = userRepository
-                .save(new UserEntity("Jhon Doe", "rjbm29@gmail.com", "j_doe", "1245", "ADMIN"));
+        var userToAdd = new UserEntity("Jhon Doe", "rjbm29@gmail.com", "j_doe", "1245", "ADMIN");
 
-        users.add(_user);
+        users.add(userRepository.save(userToAdd));
 
         return users;
     }
